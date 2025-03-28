@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="[Your concise business description here - e.g., Premier dealership for new and used vehicles, offering expert servicing and customization.]">
+    <meta name="keywords" content="automobile, cars, dealership, service, custom cars, [your brand name], [city/region]">
+    
+    <title>[Your Company Name] - Premier Automobile Solutions</title>
+    
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Favicon (Optional but Recommended) -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon"> 
+    <!-- You can generate favicons from your logo using online tools -->
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header id="header">
+        <nav class="container">
+            <a href="#hero" class="logo">
+                <img src="images/logo.svg" alt="[Your Company Name] Logo">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#hero" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <!-- Mobile Menu Toggle (Hidden initially) -->
+            <button class="nav-toggle" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section full-height">
+            <div class="hero-content container">
+                <h1>[Your Company Name]</h1>
+                <p class="tagline">[Your Catchy Tagline Here - e.g., Driving Your Dreams Forward]</p>
+                <a href="#contact" class="cta-button">Get Started</a>
+            </div>
+            <!-- Optional: Add overlay or background image styling via CSS -->
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="about-section content-section">
+            <div class="container">
+                <h2>About Us</h2>
+                <div class="about-content">
+                    <img src="images/about-us-image.jpg" alt="Image representing the company or team" class="about-image"> 
+                    <p>[Your detailed About Us text goes here. Talk about your mission, values, history, or what makes you unique in the auto industry.]</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="services-section content-section">
+            <div class="container">
+                <h2>Our Services</h2>
+                <div class="services-grid">
+                    <!-- Service Item 1 (Example - make expandable later) -->
+                    <div class="service-item">
+                        <i class="service-icon">[Icon Placeholder - e.g., Font Awesome <i class="fas fa-car"></i>]</i>
+                        <h3>New & Used Sales</h3>
+                        <p class="service-summary">Explore our wide range of quality vehicles.</p>
+                        <div class="service-details">
+                            <p>More details about sales, financing options, trade-ins etc. This part will be initially hidden and shown on click.</p>
+                        </div>
+                        <button class="expand-button" aria-expanded="false">Learn More</button>
+                    </div>
+                    
+                    <!-- Service Item 2 -->
+                    <div class="service-item">
+                        <i class="service-icon">[Icon Placeholder - e.g., <i class="fas fa-wrench"></i>]</i>
+                        <h3>Expert Servicing</h3>
+                        <p class="service-summary">Keep your vehicle running smoothly with our certified technicians.</p>
+                        <div class="service-details">
+                             <p>Details about maintenance schedules, repairs, diagnostics, parts...</p>
+                        </div>
+                         <button class="expand-button" aria-expanded="false">Learn More</button>
+                    </div>
+
+                    <!-- Service Item 3 -->
+                    <div class="service-item">
+                         <i class="service-icon">[Icon Placeholder - e.g., <i class="fas fa-paint-roller"></i>]</i>
+                        <h3>Customization & Mods</h3>
+                        <p class="service-summary">Personalize your ride to match your style.</p>
+                        <div class="service-details">
+                            <p>Details about performance tuning, body kits, wraps, interiors...</p>
+                        </div>
+                         <button class="expand-button" aria-expanded="false">Learn More</button>
+                    </div>
+                    <!-- Add more services as needed -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section content-section">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <div class="contact-wrapper">
+                    <div class="contact-info">
+                        <p>Have questions or ready to get started? Reach out!</p>
+                        <p><strong>Email:</strong> <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+                        <p><strong>Phone:</strong> <a href="tel:+1234567890">+1 (234) 567-890</a> (Optional)</p>
+                        <p><strong>Address:</strong> 123 Auto Lane, Car City, ST 12345 (Optional)</p>
+                        <!-- Add social media links if desired -->
+                    </div>
+                    <form id="contact-form" action="YOUR_FORMSPREE_ENDPOINT" method="POST" class="contact-form">
+                         <label for="name">Name:</label>
+                         <input type="text" id="name" name="name" required>
+                         
+                         <label for="email">Email:</label>
+                         <input type="email" id="email" name="email" required>
+                         
+                         <label for="message">Message:</label>
+                         <textarea id="message" name="message" rows="5" required></textarea>
+                         
+                         <button type="submit" class="cta-button">Send Message</button>
+                         <p class="form-status"></p> <!-- For showing success/error messages -->
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <p>© <span id="current-year"></span> [Your Company Name]. All Rights Reserved.</p>
+            <!-- Optional: Add social links or back-to-top button -->
+             <a href="#header" class="back-to-top" title="Back to Top">↑</a>
+        </div>
+    </footer>
+
+    <!-- Link JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>
