@@ -1,407 +1,441 @@
 /* --- Base & Variables --- */
-:root { 
-    /* This selector targets the root element of the document (the <html> tag). 
-       It's the standard place to declare global CSS variables (Custom Properties). */
-    
-    /* CSS Variables: Define reusable values. Start with '--'. */
-    --bg-color: #121212;        /* Defines a variable for the main background color (dark grey). '#' indicates a hexadecimal color code. */
-    --surface-color: #1e1e1e;   /* A slightly lighter color for card/section backgrounds. */
-    --primary-text: #e0e0e0;   /* Main text color (light grey). */
-    --secondary-text: #a0a0a0; /* Dimmer text color for less important info. */
-    --accent-color: #00ffcc;   /* The bright neon color for highlights, links, buttons. */
-    --accent-hover: #00e6b8;   /* A slightly different shade for hover effects on accent elements. */
-    --error-color: #ff4d4d;    /* Color for error messages. */
-    --success-color: #4dff4d;  /* Color for success messages. */
+:root {
+    /* Updated Color Palette for Turbotron Technologies */
+    --bg-color: #1a1a1a;        /* Dark Grey background */
+    --surface-color: #2c2c2c;   /* Slightly lighter surface for cards/sections */
+    --primary-text: #ffffff;    /* White text */
+    --secondary-text: #cccccc;  /* Light grey dimmer text */
+    --accent-color: #ff3333;    /* Turbotron Red */
+    --accent-hover: #e60000;    /* Darker Red on hover */
+    --error-color: #ff4d4d;     /* Error Red */
+    --success-color: #4dff4d;   /* Success Green */
 
-    --header-height: 70px;     /* Stores the height of the fixed header (used for spacing/offsets). 'px' means pixels. */
-    --border-radius: 5px;      /* Defines a standard corner rounding value. */
-    --transition-speed: 0.3s ease; /* Defines the duration and timing function for smooth animations (transitions). 's' means seconds. 'ease' is a timing function. */
+    --header-height: 70px;
+    --border-radius: 5px;
+    --transition-speed: 0.3s ease;
 
-    /* Font Families */
-    --font-primary: 'Poppins', sans-serif; /* Primary font (for headings). 'sans-serif' is a fallback if Poppins isn't available. */
-    --font-secondary: 'Roboto', sans-serif; /* Secondary font (for body text). */
+    /* Font Families (Keep or change as desired) */
+    --font-primary: 'Poppins', sans-serif; 
+    --font-secondary: 'Roboto', sans-serif; 
 }
 
-/* Import Fonts (If using Google Fonts) */
+/* Import Fonts (Ensure this is at the TOP of the file) */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500&display=swap');
-/* This line (place at the very top of the CSS file) fetches the specified fonts (Poppins, Roboto) from Google Fonts, making them available to use via 'font-family'. */
 
 /* --- Reset & Base Styles --- */
-*, *::before, *::after { 
-    /* The '*' selector targets EVERY element. '::before' and '::after' target pseudo-elements. 
-       This is a common 'reset' to remove default browser margins/paddings and set box-sizing. */
-    box-sizing: border-box; /* Changes how width/height are calculated (includes padding and border, not just content). Makes layout easier. */
-    margin: 0;              /* Removes default margins. */
-    padding: 0;             /* Removes default paddings. */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html {
-    scroll-behavior: smooth; /* Enables smooth scrolling when navigating via links like '#about'. */
-    scroll-padding-top: var(--header-height); /* Adds padding to the top when scrolling to an ID, offsetting for the fixed header so the section title isn't hidden underneath it. Uses the variable defined earlier. */
+    scroll-behavior: smooth; 
+    scroll-padding-top: var(--header-height); 
 }
 
 body {
-    /* Styles applied to the main body element. */
-    font-family: var(--font-secondary); /* Sets the default font for the page, using the variable. */
-    background-color: var(--bg-color); /* Sets the page background color. */
-    color: var(--primary-text);      /* Sets the default text color. */
-    line-height: 1.6;               /* Sets the space between lines of text (1.6 times the font size). Improves readability. */
-    font-size: 16px;                /* Sets the base font size for the page. */
+    font-family: var(--font-secondary);
+    background-color: var(--bg-color);
+    color: var(--primary-text); /* Default text is white */
+    line-height: 1.6;
+    font-size: 16px;
+    display: flex; /* Helps footer stick to bottom */
+    flex-direction: column; /* Stack main content and footer */
+    min-height: 100vh; /* Ensure body takes at least full viewport height */
+}
+main{
+    flex-grow: 1; /* Allows main content to expand and push footer down */
 }
 
-h1, h2, h3, h4, h5, h6 { 
-    /* Targets all heading elements. */
-    font-family: var(--font-primary); /* Use the primary font for headings. */
-    font-weight: 600;               /* Sets the font boldness (600 is semi-bold). */
-    color: var(--accent-color);      /* Makes headings use the neon accent color. */
-    margin-bottom: 1rem;            /* Adds space below headings. 'rem' is a relative unit based on the root font size (usually 16px, so 1rem = 16px). */
-}
-/* Specific heading sizes */
-h1 { font-size: 2.8rem; } /* Makes H1 larger. */
-h2 { font-size: 2rem; text-align: center; margin-bottom: 2.5rem; } /* Styles for section titles (H2). */
-h3 { font-size: 1.4rem; color: var(--primary-text); } /* Styles for sub-headings (H3), using primary text color instead of neon. */
-
-a { 
-    /* Targets all anchor (link) elements. */
-    color: var(--accent-color); /* Makes links use the neon color. */
-    text-decoration: none;      /* Removes the default underline from links. */
-    transition: color var(--transition-speed); /* Smoothly animates the color change on hover over 0.3s. */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-primary);
+    font-weight: 600;
+    margin-bottom: 1rem;
 }
 
-a:hover, a:focus { 
-    /* ':hover' applies when the mouse is over the link. 
-       ':focus' applies when the link is selected via keyboard (Tab key). Important for accessibility. */
-    color: var(--accent-hover); /* Changes link color on hover/focus. */
+/* Specific Heading Colors for Red/White Theme */
+h1 { 
+    font-size: 2.8rem; 
+    color: var(--primary-text); /* White H1 for strong contrast */
+} 
+h2 { 
+    font-size: 2rem; 
+    text-align: center; 
+    margin-bottom: 2.5rem; 
+    color: var(--accent-color); /* Red H2 for section titles */
+}
+h3 { 
+    font-size: 1.4rem; 
+    color: var(--primary-text); /* White H3 for item titles */
+} 
+
+a {
+    color: var(--accent-color); /* Links are Red */
+    text-decoration: none;
+    transition: color var(--transition-speed);
+}
+
+a:hover, a:focus {
+    color: var(--accent-hover); /* Darker red on hover/focus */
 }
 
 img {
-    /* Targets all image elements. */
-    max-width: 100%; /* Prevents images from overflowing their containers. They will scale down if needed. */
-    height: auto;    /* Maintains the image's aspect ratio when scaling. */
-    display: block;  /* Removes extra space sometimes added below images. */
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
-ul { list-style: none; } /* Removes default bullet points from unordered lists. */
-
-.container { 
-    /* Targets any element with 'class="container"'. Used for consistent content width and centering. */
-    max-width: 1100px; /* Sets the maximum width of the content area. */
-    margin: 0 auto;   /* Centers the container horizontally. '0' for top/bottom margin, 'auto' for left/right margin (distributes space equally). */
-    padding: 0 20px;  /* Adds 20px of padding on the left and right, preventing content from touching screen edges on smaller screens. */
+ul {
+    list-style: none;
 }
 
-.content-section { /* Styles common to About, Services, Contact sections. */
-    padding: 60px 0; /* Adds 60px padding top/bottom, 0px left/right (container handles left/right). */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.full-height { /* Used for the Hero section. */
-    min-height: calc(100vh - var(--header-height)); /* Makes the section at least the full viewport height minus the header height. 'vh' is viewport height unit. 'calc()' performs calculations. */
-    display: flex;         /* Enables Flexbox layout for centering content vertically and horizontally. */
-    align-items: center;   /* Vertically centers flex items. */
-    justify-content: center;/* Horizontally centers flex items. */
+.content-section {
+    padding: 60px 0;
+}
+
+.full-height {
+    min-height: calc(100vh - var(--header-height));
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* --- Header & Navigation --- */
-#header { 
-    /* Targets the element with 'id="header"'. */
-    background-color: rgba(30, 30, 30, 0.9); /* Sets background color. 'rgba' allows transparency (0.9 alpha value = 90% opaque). */
-    backdrop-filter: blur(10px); /* Creates a frosted glass effect (blurs content behind the header). Browser support varies. */
-    position: fixed;         /* Fixes the header position relative to the viewport. It stays at the top when scrolling. */
-    top: 0;                  /* Positions it at the top edge. */
-    left: 0;                 /* Positions it at the left edge. */
-    width: 100%;             /* Makes it span the full width. */
-    height: var(--header-height); /* Sets the height using the variable. */
-    z-index: 100;            /* Controls stacking order. Higher numbers appear on top. Ensures header is above other content. */
-    transition: background-color var(--transition-speed); /* Smooth transition if background changes (e.g., on scroll, though not implemented here). */
+#header {
+    background-color: rgba(26, 26, 26, 0.9); /* Semi-transparent dark grey */
+    backdrop-filter: blur(10px); 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    z-index: 100;
+    border-bottom: 1px solid #333; /* Subtle border */
 }
 
-#header nav { /* Targets the nav element *inside* the header. */
-    display: flex;            /* Uses Flexbox to arrange logo and nav menu side-by-side. */
-    justify-content: space-between; /* Pushes logo to the left and menu to the right. */
-    align-items: center;      /* Vertically aligns items in the center of the nav bar. */
-    height: 100%;             /* Makes the nav fill the header's height. */
+#header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
 }
 
-.logo img { /* Targets the image *inside* the element with class="logo". */
-    height: 40px; /* Sets the logo height. Width adjusts automatically due to 'height: auto' on the general img style. */
+.logo img {
+    height: 40px; 
+    width: auto;
 }
 
-.nav-menu { /* Targets the <ul> with class="nav-menu". */
-    display: flex; /* Arranges list items (li) horizontally. */
-    gap: 25px;     /* Adds 25px space between the navigation links. */
+.nav-menu {
+    display: flex;
+    gap: 25px;
 }
 
-.nav-link { /* Targets the anchor tags with class="nav-link". */
-    color: var(--primary-text);
+.nav-link {
+    color: var(--primary-text); /* White nav links */
     font-weight: 500;
-    padding: 5px 0; /* Adds some padding top/bottom for a larger clickable area. */
-    position: relative; /* Needed for positioning the pseudo-element '::after'. */
+    padding: 5px 0;
+    position: relative;
 }
 
-/* Neon underline hover effect */
-.nav-link::after { 
-    /* '::after' creates a pseudo-element, like a virtual child element, positioned relative to the .nav-link. */
-    content: '';            /* Pseudo-elements require a 'content' property, even if empty. */
-    position: absolute;     /* Positions it relative to the nearest positioned ancestor (.nav-link). */
-    bottom: -2px;           /* Places it 2px below the text. */
-    left: 0;                /* Starts it at the left edge. */
-    width: 0;               /* Initially has no width (invisible). */
-    height: 2px;            /* Sets the underline thickness. */
-    background-color: var(--accent-color); /* Sets the underline color. */
-    transition: width var(--transition-speed); /* Animates the width change smoothly. */
+/* Red underline hover effect */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color); /* Red underline */
+    transition: width var(--transition-speed);
 }
 
 .nav-link:hover::after,
-.nav-link:focus::after { /* Applies when the link is hovered or focused. */
-    width: 100%; /* Expands the underline to full width. */
+.nav-link:focus::after {
+    width: 100%;
 }
 
-/* Mobile Menu Styles (Initially Hidden on Desktop) */
-.nav-toggle { /* Targets the hamburger button. */
-    display: none; /* Hides the button by default (on larger screens). */
-    /* Other styles for appearance (background, border, cursor). */
+/* Mobile Menu Styles */
+.nav-toggle {
+    display: none;
     background: none; border: none; cursor: pointer; padding: 10px;
 }
-
-.nav-toggle span { /* Targets the three <span> elements inside the button. */
-    display: block; /* Makes each span a block element. */
-    width: 25px; height: 3px; /* Defines the size of the hamburger lines. */
-    background-color: var(--primary-text); /* Sets the line color. */
-    margin: 5px 0; /* Adds space between the lines. */
-    transition: all var(--transition-speed); /* Animates changes (used for the 'X' transformation). */
+.nav-toggle span {
+    display: block; width: 25px; height: 3px;
+    background-color: var(--primary-text); /* White hamburger lines */
+    margin: 5px 0;
+    transition: all var(--transition-speed);
 }
 
 
 /* --- Hero Section --- */
 .hero-section {
-    text-align: center; /* Centers the text content. */
-    /* Optional background image styling */
-    background: url('../images/hero-background.jpg') no-repeat center center/cover;
-    /* 'url(...)' sets the background image. '../' goes up one directory level from css/ to the root, then into images/.
-       'no-repeat' prevents tiling. 
-       'center center' positions the image horizontally and vertically.
-       '/cover' scales the image to cover the entire section, potentially cropping parts. */
-    position: relative; /* Needed to position the ::before pseudo-element overlay correctly. */
+    text-align: center;
+    /* Consider adding a relevant background */
+    /* background: url('../images/turbotron-hero-bg.jpg') no-repeat center center/cover; */
+    position: relative; 
 }
 
-/* Optional: Dark overlay for better text readability */
-.hero-section::before { /* Creates a pseudo-element overlay on top of the background image but below the text content. */
-    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; /* Covers the entire section. */
-    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black overlay. Adjust opacity (0.6) as needed. */
-    z-index: 1; /* Places the overlay above the background (default z-index 0) */
+/* Dark overlay for background image readability */
+.hero-section::before {
+    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Adjust opacity if using background image */
+    z-index: 1;
+    /* Remove if no background image is used */
+    /* display: none; */ 
 }
 
-.hero-content { /* Targets the div containing the hero text (h1, p, button). */
-    position: relative; /* Needed to ensure it sits on top of the overlay. */
-    z-index: 2; /* Places the content above the overlay (z-index 1). */
+.hero-content {
+    position: relative; 
+    z-index: 2;
 }
 
-/* Specific styles for hero text (larger font, neon glow) */
-.hero-section h1 { 
+.hero-section h1 {
     font-size: 3.5rem; 
     margin-bottom: 0.5rem;
-    text-shadow: 0 0 10px rgba(0, 255, 204, 0.5); /* Adds a neon glow effect (horizontal offset, vertical offset, blur radius, color). */
-}
-.hero-section .tagline { /* Styles for the tagline paragraph. */
-    font-size: 1.4rem; color: var(--secondary-text); margin-bottom: 2rem; 
+    /* Removed text-shadow, adjust if desired */
 }
 
-/* --- Call to Action Button --- */
-.cta-button { /* Targets elements with class="cta-button" (used for hero button and form submit). */
-    display: inline-block; /* Allows setting padding/margin, but flows with text. */
-    background-color: var(--accent-color); /* Neon background. */
-    color: var(--bg-color); /* Dark text for contrast on neon background. */
-    padding: 12px 25px; /* Space inside the button. */
-    border-radius: var(--border-radius); /* Rounded corners. */
-    font-weight: 600; text-transform: uppercase; letter-spacing: 1px; /* Text styling. */
-    border: 2px solid var(--accent-color); /* Border matching the background initially. */
-    transition: background-color var(--transition-speed), color var(--transition-speed), transform var(--transition-speed), box-shadow var(--transition-speed); /* Animates multiple properties on hover. */
+.hero-section .tagline {
+    font-size: 1.4rem;
+    color: var(--secondary-text); /* Light grey tagline */
+    margin-bottom: 2rem;
+}
+
+/* --- Call to Action Button (Red Theme) --- */
+.cta-button {
+    display: inline-block;
+    background-color: var(--accent-color); /* Red background */
+    color: var(--primary-text); /* White text */
+    padding: 12px 25px;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 2px solid var(--accent-color); /* Red border */
+    transition: background-color var(--transition-speed), color var(--transition-speed), transform var(--transition-speed), box-shadow var(--transition-speed);
+    cursor: pointer;
 }
 
 .cta-button:hover,
-.cta-button:focus { /* Styles for button on hover/focus. */
-    background-color: transparent; /* Makes background transparent. */
-    color: var(--accent-color); /* Changes text color to neon. */
-    transform: translateY(-3px); /* Slightly lifts the button up. */
-    box-shadow: 0 5px 15px rgba(0, 255, 204, 0.3); /* Adds a neon glow shadow. */
+.cta-button:focus {
+    background-color: var(--accent-hover); /* Darker Red background */
+    color: var(--primary-text);
+    border-color: var(--accent-hover);
+    transform: translateY(-3px); 
+    box-shadow: 0 5px 15px rgba(255, 51, 51, 0.3); /* Red glow on hover */
 }
 
 
 /* --- About Section --- */
-.about-section { background-color: var(--surface-color); } /* Slightly lighter background. */
-
+.about-section {
+    background-color: var(--surface-color); /* Use surface color for contrast */
+}
 .about-content {
-    display: grid; /* Uses CSS Grid layout. */
-    grid-template-columns: 1fr 2fr; /* Creates two columns. The second column is twice as wide as the first (fr = fractional unit). */
-    gap: 40px; /* Space between grid columns/rows. */
-    align-items: center; /* Vertically aligns items within their grid cells. */
+    display: grid;
+    grid-template-columns: 1fr 2fr; 
+    gap: 40px;
+    align-items: center;
 }
-.about-image { /* Styles for the image in the about section. */
-    border-radius: var(--border-radius); max-width: 350px; justify-self: center; 
-}
-
-
-/* --- Services Section --- */
-.services-grid {
-    display: grid; /* Uses Grid layout. */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-    /* Creates responsive columns. 
-       'repeat(auto-fit, ...)' tells the browser to fit as many columns as possible.
-       'minmax(280px, 1fr)' defines column size: minimum width of 280px, maximum taking up equal fractional space (1fr). 
-       Columns will wrap automatically onto the next line if they don't fit. */
-    gap: 30px; /* Space between grid items. */
+.about-image {
+    border-radius: var(--border-radius);
+    max-width: 350px; 
+    justify-self: center; 
 }
 
-.service-item { /* Styles for each individual service card. */
-    background-color: var(--surface-color); padding: 25px; border-radius: var(--border-radius);
-    border: 1px solid #333; /* Subtle border. */
-    text-align: center; /* Centers content inside the card. */
-    transition: transform var(--transition-speed), box-shadow var(--transition-speed); /* Animates lift and shadow on hover. */
+
+/* --- Solutions Section (Formerly Services) --- */
+.solutions-section{ /* Use the new section class */
+     background-color: var(--bg-color); /* Back to main background */
+}
+.solutions-grid { /* Use the new grid class */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
 }
 
-.service-item:hover { /* Hover effect for service cards. */
-    transform: translateY(-5px); /* Lifts the card slightly. */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Adds a more prominent shadow. */
+.solution-item { /* Use the new item class */
+    background-color: var(--surface-color); /* Card background */
+    padding: 25px;
+    border-radius: var(--border-radius);
+    border: 1px solid #444; /* Slightly more visible border */
+    text-align: center;
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
 }
 
-.service-icon { /* Styles for the icon placeholder. */
-    font-size: 2.5rem; color: var(--accent-color); margin-bottom: 1rem; display: block; 
-}
-/* ... other service item text styles ... */
-
-.service-details { /* The hidden details container. */
-    max-height: 0; /* Initially collapsed (no height). */
-    overflow: hidden; /* Hides content that overflows the zero height. */
-    transition: max-height 0.5s ease-out, margin-top 0.5s ease-out; /* Smoothly animates the height and margin changes when expanding/collapsing. */
-    text-align: left; font-size: 0.95rem; color: var(--primary-text); margin-top: 0;
+.solution-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
-.service-item.is-expanded .service-details { 
-    /* Styles applied to '.service-details' ONLY when its parent '.service-item' ALSO has the class 'is-expanded' (added by JS). */
-    max-height: 300px; /* Sets a maximum height to expand to (adjust if needed). */
-    margin-top: 1rem; /* Adds space above the details when expanded. */
+.service-icon { /* Keep class name for icon or change if preferred */
+    font-size: 2.5rem;
+    color: var(--accent-color); /* Red icons */
+    margin-bottom: 1rem;
+    display: block; 
 }
 
-.expand-button { /* Styles for the 'Learn More' button. */
-    background: none; border: 1px solid var(--accent-color); color: var(--accent-color);
-    padding: 8px 15px; border-radius: var(--border-radius); cursor: pointer; font-size: 0.9rem; margin-top: 1rem;
+.solution-item h3 { /* Target H3 within the item */
+    margin-bottom: 0.5rem;
+    color: var(--primary-text); /* White title for readability */
+}
+
+.service-summary { /* Keep class name or change */
+    color: var(--secondary-text); /* Light grey summary */
+    margin-bottom: 1rem;
+}
+
+.service-details { /* Keep class name or change */
+    max-height: 0; 
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, margin-top 0.5s ease-out; 
+    text-align: left;
+    font-size: 0.95rem;
+    color: var(--primary-text); /* White details */
+    margin-top: 0;
+}
+
+.solution-item.is-expanded .service-details { /* Adjust selector */
+    max-height: 300px; 
+    margin-top: 1rem; 
+}
+
+.expand-button { /* Learn More button styling */
+    background: none;
+    border: 1px solid var(--accent-color); /* Red border */
+    color: var(--accent-color); /* Red text */
+    padding: 8px 15px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-top: 1rem;
     transition: background-color var(--transition-speed), color var(--transition-speed);
 }
-.expand-button:hover, .expand-button:focus { /* Hover/focus style for the expand button. */
-     background-color: var(--accent-color); color: var(--bg-color); 
+
+.expand-button:hover,
+.expand-button:focus {
+    background-color: var(--accent-color); /* Red background on hover */
+    color: var(--primary-text); /* White text on hover */
 }
 
-/* CSS to change button text hint (using pseudo-elements) */
-.service-item.is-expanded .expand-button::after { content: ' (Show Less)'; }
-.service-item:not(.is-expanded) .expand-button::after { content: ' (Learn More)'; }
-/* ':not(.is-expanded)' selects the item when it DOES NOT have the 'is-expanded' class. */
+/* Updated button text hint */
+.solution-item.is-expanded .expand-button::after { content: ' (Show Less)'; }
+.solution-item:not(.is-expanded) .expand-button::after { content: ' (Learn More)'; }
 
 
 /* --- Contact Section --- */
-.contact-section { background-color: var(--surface-color); }
-.contact-wrapper { /* Grid layout for contact info and form. */
-    display: grid; grid-template-columns: 1fr 1fr; gap: 40px; 
+.contact-section {
+    background-color: var(--surface-color); /* Use surface color */
 }
-/* ... contact info styles ... */
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+.contact-info p { margin-bottom: 1rem; }
+.contact-info strong { color: var(--primary-text); }
 
 /* Form Styling */
-.contact-form { display: flex; flex-direction: column; gap: 15px; } /* Stacks form elements vertically with spacing. */
-.contact-form label { /* Styles for form labels. */
+.contact-form { display: flex; flex-direction: column; gap: 15px; }
+.contact-form label {
     font-weight: 500; margin-bottom: -5px; color: var(--secondary-text); 
 }
 .contact-form input,
-.contact-form textarea { /* Common styles for input fields and textarea. */
-    width: 100%; padding: 12px; border-radius: var(--border-radius); border: 1px solid #444;
-    background-color: var(--bg-color); color: var(--primary-text);
-    font-family: inherit; /* Use the body's font. */ font-size: 1rem;
+.contact-form textarea {
+    width: 100%; padding: 12px; border-radius: var(--border-radius); border: 1px solid #555; /* Slightly lighter border */
+    background-color: var(--bg-color); /* Darker input background */
+    color: var(--primary-text); /* White text input */
+    font-family: inherit; font-size: 1rem;
 }
 .contact-form input:focus,
-.contact-form textarea:focus { /* Styles when an input/textarea is focused (clicked into). */
-    outline: none; /* Removes the default browser focus outline. */
-    border-color: var(--accent-color); /* Changes border color to neon. */
-    box-shadow: 0 0 0 2px rgba(0, 255, 204, 0.3); /* Adds a custom neon focus ring. */
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--accent-color); /* Red focus border */
+    box-shadow: 0 0 0 2px rgba(255, 51, 51, 0.3); /* Red focus ring */
 }
-.contact-form button[type="submit"] { align-self: flex-start; } /* Aligns the submit button to the left within the flex container. */
-.form-status { margin-top: 10px; font-weight: 500; } /* Base style for the status message paragraph. */
-.form-status.success { color: var(--success-color); } /* Green color if it also has class 'success'. */
-.form-status.error { color: var(--error-color); } /* Red color if it also has class 'error'. */
+.contact-form button[type="submit"] { align-self: flex-start; } /* Uses .cta-button styles */
+.form-status { margin-top: 10px; font-weight: 500; }
+.form-status.success { color: var(--success-color); }
+.form-status.error { color: var(--error-color); }
 
 
 /* --- Footer --- */
-#footer { /* Styles for the footer section. */
-    background-color: #0a0a0a; color: var(--secondary-text); padding: 20px 0;
-    text-align: center; font-size: 0.9rem; margin-top: auto; /* 'margin-top: auto' helps push footer down on short pages when body is flex/grid, though not strictly necessary here. */
+#footer {
+    background-color: #0a0a0a; /* Very dark footer */
+    color: var(--secondary-text);
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: auto; /* Keep footer at bottom */
+    border-top: 1px solid #333; /* Subtle border */
 }
-#footer .container{ position: relative; } /* Needed for absolute positioning of back-to-top button */
-.back-to-top { /* Style for the back-to-top arrow link */
+#footer .container{ position: relative; }
+.back-to-top {
     position: absolute; right: 20px; bottom: 0px; font-size: 1.5rem;
     color: var(--secondary-text); transition: color var(--transition-speed), transform var(--transition-speed);
 }
-.back-to-top:hover { /* Hover effect for back-to-top */
-    color: var(--accent-color); transform: translateY(-3px);
+.back-to-top:hover {
+    color: var(--accent-color); /* Red hover */
+    transform: translateY(-3px);
 }
 
 
 /* --- Responsive Design (Media Queries) --- */
-/* Media queries apply styles ONLY when the condition (screen width) is met. 
-   Styles inside cascade and override the base styles. */
-
-/* Medium devices (tablets, screen width LESS THAN 992px) */
+/* Medium devices (tablets, less than 992px) */
 @media (max-width: 991.98px) {
-    .container { max-width: 90%; } /* Make container slightly wider percentage-wise. */
-    .about-content { grid-template-columns: 1fr; text-align: center; } /* Stack image and text vertically. */
-    .about-image { margin-bottom: 20px; max-width: 250px; } /* Smaller image, add space below. */
-    .contact-wrapper { grid-template-columns: 1fr; } /* Stack contact info and form. */
-    .contact-info { margin-bottom: 30px; text-align: center; } /* Center text, add space below. */
-    .contact-form button[type="submit"] { align-self: center; } /* Center submit button. */
+    .container { max-width: 90%; }
+    .about-content { grid-template-columns: 1fr; text-align: center; }
+    .about-image { margin-bottom: 20px; max-width: 250px; }
+    .contact-wrapper { grid-template-columns: 1fr; }
+    .contact-info { margin-bottom: 30px; text-align: center;}
+    .contact-form button[type="submit"] { align-self: center;}
 }
 
-/* Small devices (landscape phones, screen width LESS THAN 768px) */
+/* Small devices (landscape phones, less than 768px) */
 @media (max-width: 767.98px) {
-    :root { --header-height: 60px; } /* Make header slightly shorter. */
-    html { scroll-padding-top: var(--header-height); } /* Adjust scroll padding accordingly. */
+    :root { --header-height: 60px; } 
+    html { scroll-padding-top: var(--header-height); }
 
-    /* Adjust heading sizes for smaller screens */
-    h1 { font-size: 2.5rem; } 
-    /* ... other heading adjustments ... */
+    h1 { font-size: 2.5rem; }
+    .hero-section h1 { font-size: 3rem; }
+    .hero-section .tagline { font-size: 1.2rem; }
+    h2 { font-size: 1.8rem; margin-bottom: 2rem; }
 
-    /* Mobile Navigation Styles */
-    .nav-menu { /* Reposition and style the nav menu for mobile view. */
-        position: fixed; /* Fix position relative to viewport. */
-        top: var(--header-height); /* Position it just below the header. */
-        right: -100%; /* Start it completely off-screen to the right. */
-        width: 70%; max-width: 300px; /* Set width. */
-        height: calc(100vh - var(--header-height)); /* Fill remaining screen height. */
-        background-color: var(--surface-color); /* Give it a background. */
-        flex-direction: column; /* Stack links vertically. */
-        align-items: center; /* Center links horizontally within the menu. */
-        padding-top: 30px; gap: 30px; /* Add spacing. */
-        transition: right var(--transition-speed); /* Animate the 'right' property for the slide-in effect. */
-        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2); /* Add shadow on the left edge. */
+    /* Mobile Navigation */
+    .nav-menu {
+        position: fixed; top: var(--header-height); right: -100%; 
+        width: 70%; max-width: 300px; height: calc(100vh - var(--header-height));
+        background-color: var(--surface-color); /* Use surface color for menu */
+        flex-direction: column; align-items: center;
+        padding-top: 30px; gap: 30px;
+        transition: right var(--transition-speed);
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+        border-left: 1px solid #444; /* Add border */
     }
+    .nav-menu.is-active { right: 0; }
+    .nav-link { font-size: 1.1rem; }
+    .nav-link::after{ display: none; }
+    .nav-toggle { display: block; z-index: 101; }
+    .nav-toggle.is-active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .nav-toggle.is-active span:nth-child(2) { opacity: 0; }
+    .nav-toggle.is-active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
-    .nav-menu.is-active { /* When the menu has the 'is-active' class (added by JS)... */
-        right: 0; /* Slide it into view by setting right position to 0. */
-    }
-
-    .nav-link { font-size: 1.1rem; } /* Slightly larger text for easier tapping. */
-    .nav-link::after{ display: none; } /* Hide the underline effect on mobile nav. */
-
-    .nav-toggle { display: block; z-index: 101; } /* SHOW the hamburger button on small screens. Ensure it's above the menu overlay. */
-
-    /* Hamburger Icon -> 'X' Icon Transformation (when 'is-active' class is added by JS) */
-    .nav-toggle.is-active span:nth-child(1) { transform: translateY(8px) rotate(45deg); } /* Top bar rotates down. */
-    .nav-toggle.is-active span:nth-child(2) { opacity: 0; } /* Middle bar fades out. */
-    .nav-toggle.is-active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); } /* Bottom bar rotates up. */
-
-    .services-grid { grid-template-columns: 1fr; } /* Stack service items vertically (one column). */
-    .back-to-top{ display: none; } /* Hide back-to-top button on small screens. */
+    .solutions-grid { grid-template-columns: 1fr; } /* Stack solution items */
+    .back-to-top{ display: none; }
 }
 
-/* Extra small devices (portrait phones, screen width LESS THAN 576px) */
+/* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
-    /* Further adjustments for very small screens (padding, font sizes). */
-    .container { padding: 0 15px; } 
+    .container { padding: 0 15px; }
     h1 { font-size: 2rem; }
-    /* ... etc ... */
+    .hero-section h1 { font-size: 2.5rem; }
+    .hero-section .tagline { font-size: 1rem; }
+    .cta-button { padding: 10px 20px; font-size: 0.9rem; }
+    .content-section { padding: 40px 0; }
 }
