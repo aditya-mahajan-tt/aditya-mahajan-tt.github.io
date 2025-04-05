@@ -178,7 +178,7 @@ ul {
 .hero-section {
     text-align: center;
     /* Consider adding a relevant background */
-    /* background: url('../images/turbotron-hero-bg.jpg') no-repeat center center/cover; */
+     background: url('../images/highway.jpg') no-repeat center center/cover;
     position: relative; 
 }
 
