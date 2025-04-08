@@ -253,12 +253,12 @@ ul {
     display: flex; 
     justify-content: space-between; 
     align-items: center; 
-    gap: 60px; /* Increased gap */
-    margin-bottom: 5rem; /* Increased space before lower text */
+    gap: 40px; /* Increased gap */
+    margin-bottom: 4rem; /* Increased space before lower text */
 }
 
 .coming-soon-text-block {
-    flex-basis: 55%;
+    flex-basis: 50%;
     /* CHANGE: Ensure text alignment is explicitly left */
     text-align: left; 
 }
@@ -284,7 +284,7 @@ ul {
 }
 
 .coming-soon-logo-block {
-    flex-basis: 35%; 
+    flex-basis: 40%; 
     display: flex;
     justify-content: center; 
     align-items: center;
@@ -292,7 +292,7 @@ ul {
 
 .coming-soon-logo {
     /* --- INCREASED LOGO SIZE --- */
-    max-width: 550px; /* Larger logo */
+    max-width: 650px; /* Larger logo */
     height: auto;
 }
 
@@ -315,7 +315,7 @@ ul {
           font-size: 1.5rem;
      }
      .coming-soon-logo {
-         max-width: 400px; 
+         max-width: 500px; 
      }
      .coming-soon-lower-text {
          font-size: 2.6rem; 
@@ -331,7 +331,7 @@ ul {
           font-size: 1.4rem; /* Adjusted tablet subheading size */
      }
      .coming-soon-logo {
-         max-width: 300px; /* Adjusted tablet logo size */
+         max-width: 380px; /* Adjusted tablet logo size */
      }
      .coming-soon-lower-text {
          font-size: 2.2rem; /* Adjusted tablet lower text size */
@@ -362,7 +362,7 @@ ul {
           font-size: 1.2rem; /* Adjusted mobile subheading size */
      }
      .coming-soon-logo {
-         max-width: 250px; /* Adjusted mobile logo size */
+         max-width: 280px; /* Adjusted mobile logo size */
      }
      .coming-soon-lower-text {
         text-align: center;
@@ -378,7 +378,7 @@ ul {
           font-size: 1.1rem;
      }
       .coming-soon-logo {
-         max-width: 200px;
+         max-width: 240px;
      }
      .coming-soon-lower-text {
         font-size: 1.8rem; /* Adjusted small mobile lower text size */
