@@ -252,7 +252,7 @@ ul {
 .coming-soon-upper {
     display: flex; 
     justify-content: space-between; 
-    align-items: center; 
+    align-items: left; 
     gap: 50px; 
     margin-bottom: 4rem; 
 }
@@ -285,8 +285,8 @@ ul {
 .coming-soon-logo-block {
     flex-basis: 35%; 
     display: flex;
-    justify-content: center; 
-    align-items: center;
+    justify-content: left; 
+    align-items: left;
 }
 
 .coming-soon-logo {
