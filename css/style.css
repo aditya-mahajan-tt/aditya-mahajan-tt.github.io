@@ -179,7 +179,7 @@ ul {
 .hero-section {
     text-align: center;
     /* Light background image suggestion - replace filename */
-    background: url('../images/light-hero-bg.jpg') no-repeat center center/cover; 
+    background: url('../images/whiteherobg.jpeg') no-repeat center center/cover; 
     position: relative; 
     color: var(--primary-text); /* Ensure text is dark */
 }
