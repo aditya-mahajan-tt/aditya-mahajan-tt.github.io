@@ -266,11 +266,13 @@ ul {
 .coming-soon-text-block h2 {
     /* --- INCREASED FONT SIZE --- */
     /* CHANGE: Increased font size and weight */
-    font-size: 5rem;  /* Significantly larger heading */
-    font-weight: 700; /* Bolder */
-    line-height: 1.2; /* Tighter line height */
+    font-size: 5rem;  
+    font-weight: 600; 
+    line-height: 1.2; 
     color: var(--primary-text);
-    margin-bottom: 1.5rem; /* Increased space below heading */
+    margin-bottom: 1.5rem; 
+    /* --- CHANGE: Explicitly align heading text left --- */
+    text-align: left; /* Ensures lines within H2 are left-aligned */
 }
 
 .coming-soon-subheading {
@@ -296,10 +298,10 @@ ul {
 
 .coming-soon-lower-text {
     text-align: left; 
-    padding-left: 1.5rem; 
-    /* CHANGE: Increased font size and weight */
-    font-size: 3rem; /* Larger */
-    font-weight: 600; /* Bolder */
+    /* --- CHANGE: Remove left padding --- */
+    padding-left: 0; /* Was 1.5rem */
+    font-size: 3rem; 
+    font-weight: 600; 
     color: var(--primary-text); 
     margin: 0; 
 }
@@ -313,7 +315,7 @@ ul {
           font-size: 1.5rem;
      }
      .coming-soon-logo {
-         max-width: 380px; 
+         max-width: 400px; 
      }
      .coming-soon-lower-text {
          font-size: 2.6rem; 
