@@ -266,9 +266,9 @@ ul {
 .coming-soon-text-block h2 {
     /* --- INCREASED FONT SIZE --- */
     /* CHANGE: Increased font size and weight */
-    font-size: 5rem;  
-    font-weight: 600; 
-    line-height: 1.2; 
+    font-size: 4rem;  
+    font-weight: 500; 
+    line-height: 1.1; 
     color: var(--primary-text);
     margin-bottom: 1.5rem; 
     /* --- CHANGE: Explicitly align heading text left --- */
@@ -277,8 +277,8 @@ ul {
 
 .coming-soon-subheading {
      /* CHANGE: Increased font size and weight */
-    font-size: 1.7rem; /* Larger subheading */
-    font-weight: 600; /* Bolder subheading */
+    font-size: 1.5rem; /* Larger subheading */
+    font-weight: 550; /* Bolder subheading */
     color: var(--secondary-text); 
     margin: 0; 
 }
