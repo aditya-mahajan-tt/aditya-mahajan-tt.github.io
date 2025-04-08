@@ -1,18 +1,20 @@
 /* --- Base & Variables --- */
 :root {
-    /* Updated Color Palette for Turbotron Technologies */
-    --bg-color: #1a1a1a;        /* Dark Grey background */
-    --surface-color: #2c2c2c;   /* Slightly lighter surface for cards/sections */
-    --primary-text: #ffffff;    /* White text */
-    --secondary-text: #cccccc;  /* Light grey dimmer text */
-    --accent-color: #ff3333;    /* Turbotron Red */
-    --accent-hover: #e60000;    /* Darker Red on hover */
-    --error-color: #ff4d4d;     /* Error Red */
-    --success-color: #4dff4d;   /* Success Green */
+    /* Updated Color Palette for Light Theme */
+    --bg-color: #ffffff;        /* White background */
+    --surface-color: #f8f9fa;   /* Very Light Grey surface for cards/sections */
+    --primary-text: #212529;    /* Dark Grey/Almost Black text */
+    --secondary-text: #6c757d;  /* Medium Grey dimmer text */
+    --accent-color: #dc3545;    /* Bootstrap Red (good contrast) */
+    --accent-hover: #c82333;    /* Darker Red on hover */
+    --border-color: #dee2e6;    /* Light Grey for borders */
+    --error-color: #dc3545;     /* Error Red */
+    --success-color: #28a745;   /* Success Green */
 
     --header-height: 70px;
     --border-radius: 5px;
     --transition-speed: 0.3s ease;
+    --light-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Lighter shadow for light theme */
 
     /* Font Families (Keep or change as desired) */
     --font-primary: 'Poppins', sans-serif; 
@@ -37,28 +39,26 @@ html {
 body {
     font-family: var(--font-secondary);
     background-color: var(--bg-color);
-    color: var(--primary-text); /* Default text is white */
+    color: var(--primary-text); /* Default text is dark */
     line-height: 1.6;
     font-size: 16px;
-    display: flex; /* Helps footer stick to bottom */
-    flex-direction: column; /* Stack main content and footer */
-    min-height: 100vh; /* Ensure body takes at least full viewport height */
+    display: flex; 
+    flex-direction: column; 
+    min-height: 100vh; 
 }
 main{
-    flex-grow: 1; /* Allows main content to expand and push footer down */
+    flex-grow: 1; 
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-primary);
     font-weight: 600;
     margin-bottom: 1rem;
+    color: var(--primary-text); /* Dark headings by default */
 }
 
-/* Specific Heading Colors for Red/White Theme */
-h1 { 
-    font-size: 2.8rem; 
-    color: var(--primary-text); /* White H1 for strong contrast */
-} 
+/* Specific Heading Colors */
+h1 { font-size: 2.8rem; } 
 h2 { 
     font-size: 2rem; 
     text-align: center; 
@@ -67,7 +67,7 @@ h2 {
 }
 h3 { 
     font-size: 1.4rem; 
-    color: var(--primary-text); /* White H3 for item titles */
+    /* color: var(--primary-text); Inherits dark text color */
 } 
 
 a {
@@ -109,15 +109,16 @@ ul {
 
 /* --- Header & Navigation --- */
 #header {
-    background-color: rgba(26, 26, 26, 0.9); /* Semi-transparent dark grey */
-    backdrop-filter: blur(10px); 
+    background-color: rgba(255, 255, 255, 0.95); /* Semi-transparent white */
+    backdrop-filter: blur(8px); 
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: var(--header-height);
     z-index: 100;
-    border-bottom: 1px solid #333; /* Subtle border */
+    border-bottom: 1px solid var(--border-color); /* Light border */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Subtle shadow */
 }
 
 #header nav {
@@ -138,7 +139,7 @@ ul {
 }
 
 .nav-link {
-    color: var(--primary-text); /* White nav links */
+    color: var(--primary-text); /* Dark nav links */
     font-weight: 500;
     padding: 5px 0;
     position: relative;
@@ -168,7 +169,7 @@ ul {
 }
 .nav-toggle span {
     display: block; width: 25px; height: 3px;
-    background-color: var(--primary-text); /* White hamburger lines */
+    background-color: var(--primary-text); /* Dark hamburger lines */
     margin: 5px 0;
     transition: all var(--transition-speed);
 }
@@ -177,18 +178,20 @@ ul {
 /* --- Hero Section --- */
 .hero-section {
     text-align: center;
-    /* Consider adding a relevant background */
-     background: url('../images/highway.jpg') no-repeat center center/cover;
+    /* Light background image suggestion - replace filename */
+    background: url('../images/light-hero-bg.jpg') no-repeat center center/cover; 
     position: relative; 
+    color: var(--primary-text); /* Ensure text is dark */
 }
 
-/* Dark overlay for background image readability */
+/* Light overlay/gradient (optional, adjust as needed) */
 .hero-section::before {
     content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); /* Adjust opacity if using background image */
+    /* Example: Subtle white gradient from bottom */
+    /* background: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(255,255,255,0.6)); */
+    /* Or a very light solid overlay if image is busy */
+    background-color: rgba(255, 255, 255, 0.3); 
     z-index: 1;
-    /* Remove if no background image is used */
-    /* display: none; */ 
 }
 
 .hero-content {
@@ -199,20 +202,20 @@ ul {
 .hero-section h1 {
     font-size: 3.5rem; 
     margin-bottom: 0.5rem;
-    /* Removed text-shadow, adjust if desired */
+    color: var(--primary-text); /* Ensure H1 is dark */
 }
 
 .hero-section .tagline {
     font-size: 1.4rem;
-    color: var(--secondary-text); /* Light grey tagline */
+    color: var(--secondary-text); /* Medium grey tagline */
     margin-bottom: 2rem;
 }
 
-/* --- Call to Action Button (Red Theme) --- */
+/* --- Call to Action Button (Red Theme on Light BG) --- */
 .cta-button {
     display: inline-block;
     background-color: var(--accent-color); /* Red background */
-    color: var(--primary-text); /* White text */
+    color: #ffffff; /* White text */
     padding: 12px 25px;
     border-radius: var(--border-radius);
     font-weight: 600;
@@ -226,16 +229,55 @@ ul {
 .cta-button:hover,
 .cta-button:focus {
     background-color: var(--accent-hover); /* Darker Red background */
-    color: var(--primary-text);
+    color: #ffffff;
     border-color: var(--accent-hover);
     transform: translateY(-3px); 
-    box-shadow: 0 5px 15px rgba(255, 51, 51, 0.3); /* Red glow on hover */
+    box-shadow: 0 5px 15px rgba(220, 53, 69, 0.3); /* Reddish shadow */
 }
 
+/* --- Coming Soon Section --- */
+.coming-soon-section {
+    background-color: var(--surface-color); /* Light grey background */
+    border-bottom: 1px solid var(--border-color); /* Separator line */
+}
+.coming-soon-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
+    gap: 40px;
+    align-items: center;
+    padding: 30px 0; /* Add some vertical padding */
+}
+.coming-soon-text-content {
+    text-align: center; /* Center text within its column */
+}
+.coming-soon-heading {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--primary-text);
+    margin-bottom: 1rem;
+}
+.coming-soon-logo-container{
+     display: flex; /* Center logo within its column */
+     justify-content: center;
+     align-items: center;
+}
+.coming-soon-logo {
+    max-width: 150px; /* Control logo size */
+    height: auto;
+}
+.coming-soon-subtext { /* Style for the "Coming Soon..." text */
+    grid-column: 1 / -1; /* Make it span all columns */
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--accent-color); /* Red color */
+    margin-top: 2rem;
+    padding-bottom: 1rem; /* Add space below */
+}
 
 /* --- About Section --- */
 .about-section {
-    background-color: var(--surface-color); /* Use surface color for contrast */
+    background-color: var(--bg-color); /* White background */
 }
 .about-content {
     display: grid;
@@ -247,91 +289,88 @@ ul {
     border-radius: var(--border-radius);
     max-width: 350px; 
     justify-self: center; 
+    box-shadow: var(--light-shadow); /* Add subtle shadow */
 }
 
 
-/* --- Solutions Section (Formerly Services) --- */
-.solutions-section{ /* Use the new section class */
-     background-color: var(--bg-color); /* Back to main background */
+/* --- Solutions Section --- */
+.solutions-section{ 
+     background-color: var(--surface-color); /* Light grey background */
 }
-.solutions-grid { /* Use the new grid class */
+.solutions-grid { 
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
 }
 
-.solution-item { /* Use the new item class */
-    background-color: var(--surface-color); /* Card background */
+.solution-item { 
+    background-color: var(--bg-color); /* White card background */
     padding: 25px;
     border-radius: var(--border-radius);
-    border: 1px solid #444; /* Slightly more visible border */
+    border: 1px solid var(--border-color); /* Light border */
     text-align: center;
     transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    box-shadow: var(--light-shadow); /* Subtle shadow */
 }
 
 .solution-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow on hover */
 }
 
 /* Styling for images within solution items */
 .solution-image {
-    display: block; /* Ensure it takes up its own space */
-    height: 80px;   /* Set a consistent height (adjust as needed) */
-    width: auto;    /* Maintain aspect ratio */
-    max-width: 100%; /* Prevent overflow if original image is narrow */
-    margin: 0 auto 1.5rem auto; /* Center horizontally, add 1.5rem space below */
-    object-fit: contain; /* Ensures the whole image fits within the height */
-}
-/* .service-icon { /* Keep class name for icon or change if preferred 
-    font-size: 2.5rem;
-    color: var(--accent-color); /* Red icons 
-    margin-bottom: 1rem;
     display: block; 
+    height: 80px;   
+    width: auto;    
+    max-width: 100%; 
+    margin: 0 auto 1.5rem auto; 
+    object-fit: contain; 
 }
-*/
 
-.solution-item h3 { /* Target H3 within the item */
+.solution-item h3 { 
     margin-bottom: 0.5rem;
-    color: var(--primary-text); /* White title for readability */
+    color: var(--primary-text); 
 }
 
-.service-summary { /* Keep class name or change */
-    color: var(--secondary-text); /* Light grey summary */
+.service-summary { 
+    color: var(--secondary-text); 
     margin-bottom: 1rem;
 }
 
-.service-details { /* Keep class name or change */
+.service-details { 
     max-height: 0; 
     overflow: hidden;
     transition: max-height 0.5s ease-out, margin-top 0.5s ease-out; 
     text-align: left;
     font-size: 0.95rem;
-    color: var(--primary-text); /* White details */
+    color: var(--primary-text); /* Dark details text */
     margin-top: 0;
 }
 
-.solution-item.is-expanded .service-details { /* Adjust selector */
+.solution-item.is-expanded .service-details { 
     max-height: 300px; 
     margin-top: 1rem; 
 }
 
-.expand-button { /* Learn More button styling */
+/* Outline Button for Light Theme */
+.expand-button { 
     background: none;
-    border: 1px solid var(--accent-color); /* Red border */
-    color: var(--accent-color); /* Red text */
+    border: 1px solid var(--primary-text); /* Dark border */
+    color: var(--primary-text); /* Dark text */
     padding: 8px 15px;
     border-radius: var(--border-radius);
     cursor: pointer;
     font-size: 0.9rem;
     margin-top: 1rem;
-    transition: background-color var(--transition-speed), color var(--transition-speed);
+    transition: background-color var(--transition-speed), color var(--transition-speed), border-color var(--transition-speed);
 }
 
 .expand-button:hover,
 .expand-button:focus {
-    background-color: var(--accent-color); /* Red background on hover */
-    color: var(--primary-text); /* White text on hover */
+    background-color: var(--primary-text); /* Dark background on hover */
+    color: #ffffff; /* White text on hover */
+    border-color: var(--primary-text);
 }
 
 /* Updated button text hint */
@@ -341,7 +380,7 @@ ul {
 
 /* --- Contact Section --- */
 .contact-section {
-    background-color: var(--surface-color); /* Use surface color */
+    background-color: var(--bg-color); /* White background */
 }
 .contact-wrapper {
     display: grid;
@@ -358,16 +397,17 @@ ul {
 }
 .contact-form input,
 .contact-form textarea {
-    width: 100%; padding: 12px; border-radius: var(--border-radius); border: 1px solid #555; /* Slightly lighter border */
-    background-color: var(--bg-color); /* Darker input background */
-    color: var(--primary-text); /* White text input */
+    width: 100%; padding: 12px; border-radius: var(--border-radius); 
+    border: 1px solid var(--border-color); /* Light border */
+    background-color: #ffffff; /* White input background */
+    color: var(--primary-text); /* Dark text input */
     font-family: inherit; font-size: 1rem;
 }
 .contact-form input:focus,
 .contact-form textarea:focus {
     outline: none;
     border-color: var(--accent-color); /* Red focus border */
-    box-shadow: 0 0 0 2px rgba(255, 51, 51, 0.3); /* Red focus ring */
+    box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.25); /* Red focus ring */
 }
 .contact-form button[type="submit"] { align-self: flex-start; } /* Uses .cta-button styles */
 .form-status { margin-top: 10px; font-weight: 500; }
@@ -377,13 +417,13 @@ ul {
 
 /* --- Footer --- */
 #footer {
-    background-color: #0a0a0a; /* Very dark footer */
-    color: var(--secondary-text);
+    background-color: var(--surface-color); /* Light grey footer */
+    color: var(--secondary-text); /* Medium grey text */
     padding: 20px 0;
     text-align: center;
     font-size: 0.9rem;
-    margin-top: auto; /* Keep footer at bottom */
-    border-top: 1px solid #333; /* Subtle border */
+    margin-top: auto; 
+    border-top: 1px solid var(--border-color); /* Light border */
 }
 #footer .container{ position: relative; }
 .back-to-top {
@@ -405,6 +445,9 @@ ul {
     .contact-wrapper { grid-template-columns: 1fr; }
     .contact-info { margin-bottom: 30px; text-align: center;}
     .contact-form button[type="submit"] { align-self: center;}
+    .coming-soon-logo { max-width: 120px; } /* Slightly smaller logo */
+    .coming-soon-heading { font-size: 1.6rem; }
+    .coming-soon-subtext { font-size: 2rem; }
 }
 
 /* Small devices (landscape phones, less than 768px) */
@@ -421,12 +464,12 @@ ul {
     .nav-menu {
         position: fixed; top: var(--header-height); right: -100%; 
         width: 70%; max-width: 300px; height: calc(100vh - var(--header-height));
-        background-color: var(--surface-color); /* Use surface color for menu */
+        background-color: #ffffff; /* White background for menu */
         flex-direction: column; align-items: center;
         padding-top: 30px; gap: 30px;
         transition: right var(--transition-speed);
-        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
-        border-left: 1px solid #444; /* Add border */
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        border-left: 1px solid var(--border-color); 
     }
     .nav-menu.is-active { right: 0; }
     .nav-link { font-size: 1.1rem; }
@@ -436,8 +479,17 @@ ul {
     .nav-toggle.is-active span:nth-child(2) { opacity: 0; }
     .nav-toggle.is-active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
-    .solutions-grid { grid-template-columns: 1fr; } /* Stack solution items */
+    .solutions-grid { grid-template-columns: 1fr; } 
     .back-to-top{ display: none; }
+
+    /* Stack Coming Soon section on mobile */
+    .coming-soon-content {
+        grid-template-columns: 1fr; /* Stack columns */
+        text-align: center;
+        gap: 20px;
+    }
+    .coming-soon-logo { margin-bottom: 1rem; }
+    .coming-soon-subtext { margin-top: 1rem; font-size: 1.8rem; }
 }
 
 /* Extra small devices (portrait phones, less than 576px) */
@@ -448,4 +500,6 @@ ul {
     .hero-section .tagline { font-size: 1rem; }
     .cta-button { padding: 10px 20px; font-size: 0.9rem; }
     .content-section { padding: 40px 0; }
+    .coming-soon-heading { font-size: 1.4rem; }
+    .coming-soon-subtext { font-size: 1.6rem; }
 }
