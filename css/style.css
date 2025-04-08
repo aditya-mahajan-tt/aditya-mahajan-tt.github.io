@@ -268,7 +268,7 @@ ul {
 }
 
 .coming-soon-logo-block {
-    flex-basis: 35%; /* Adjust basis slightly */
+    flex-basis: 45%; /* Adjust basis slightly */
     display: flex;
     justify-content: center; 
     align-items: center;
@@ -276,7 +276,7 @@ ul {
 
 .coming-soon-logo {
     /* --- INCREASED LOGO SIZE --- */
-    max-width: 280px; /* Larger logo */
+    max-width: 350px; /* Larger logo */
     height: auto;
 }
 
