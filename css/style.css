@@ -237,10 +237,10 @@ ul {
 /* --- Coming Soon Section V2 --- */
 .coming-soon-section {
     background-color: var(--bg-color); 
-    padding: 8vh 0; 
+    padding: 10vh 0; /* Increased padding slightly */
     display: flex !important; 
-    align-items: left;
-    justify-content: left;
+    align-items: center;
+    justify-content: center;
     min-height: 80vh; 
 
 }
@@ -252,9 +252,9 @@ ul {
 .coming-soon-upper {
     display: flex; 
     justify-content: space-between; 
-    align-items: left; 
-    gap: 50px; 
-    margin-bottom: 4rem; 
+    align-items: center; 
+    gap: 60px; /* Increased gap */
+    margin-bottom: 5rem; /* Increased space before lower text */
 }
 
 .coming-soon-text-block {
@@ -265,103 +265,123 @@ ul {
 
 .coming-soon-text-block h2 {
     /* --- INCREASED FONT SIZE --- */
-    font-size: 3.8rem;  
-    font-weight: 600;
-    line-height: 1.25; 
+    /* CHANGE: Increased font size and weight */
+    font-size: 5rem;  /* Significantly larger heading */
+    font-weight: 700; /* Bolder */
+    line-height: 1.2; /* Tighter line height */
     color: var(--primary-text);
-    margin-bottom: 1rem; 
-    /* Should inherit text-align: left from parent */
+    margin-bottom: 1.5rem; /* Increased space below heading */
 }
 
 .coming-soon-subheading {
-    font-size: 1.3rem;
-    /* CHANGE: Increased font weight for more thickness */
-    font-weight: 500; /* Was 400 */
+     /* CHANGE: Increased font size and weight */
+    font-size: 1.7rem; /* Larger subheading */
+    font-weight: 600; /* Bolder subheading */
     color: var(--secondary-text); 
     margin: 0; 
-     /* Should inherit text-align: left from parent */
 }
 
 .coming-soon-logo-block {
     flex-basis: 35%; 
     display: flex;
-    justify-content: left; 
-    align-items: left;
+    justify-content: center; 
+    align-items: center;
 }
 
 .coming-soon-logo {
     /* --- INCREASED LOGO SIZE --- */
-    max-width: 450px; /* Larger logo */
+    max-width: 550px; /* Larger logo */
     height: auto;
 }
 
 .coming-soon-lower-text {
-    /* CHANGE: Align text to the left */
-    text-align: left; /* Was center */
-    /* CHANGE: Add slight padding to the left */
-    padding-left: 1.5rem; /* Adjust value (e.g., 1rem, 2rem) as needed */
-    font-size: 2.2rem; 
-    font-weight: 500; 
+    text-align: left; 
+    padding-left: 1.5rem; 
+    /* CHANGE: Increased font size and weight */
+    font-size: 3rem; /* Larger */
+    font-weight: 600; /* Bolder */
     color: var(--primary-text); 
     margin: 0; 
 }
 
 /* --- Responsive adjustments for Coming Soon V2 --- */
-@media (max-width: 991.98px) {
-     .coming-soon-text-block h2 {
-         font-size: 3rem; /* Adjust tablet heading size */
+@media (max-width: 1199.98px) { /* Added a breakpoint for slightly smaller desktops */
+    .coming-soon-text-block h2 {
+         font-size: 4.2rem; 
      }
-    .coming-soon-subheading {
-          font-size: 1.2rem;
+      .coming-soon-subheading{
+          font-size: 1.5rem;
      }
      .coming-soon-logo {
-         max-width: 280px; /* Adjust tablet logo size */
+         max-width: 380px; 
      }
      .coming-soon-lower-text {
-         font-size: 2rem; /* Adjust tablet lower text size */
+         font-size: 2.6rem; 
+     }
+}
+
+
+@media (max-width: 991.98px) {
+     .coming-soon-text-block h2 {
+         font-size: 3.5rem; /* Adjusted tablet heading size */
+     }
+      .coming-soon-subheading{
+          font-size: 1.4rem; /* Adjusted tablet subheading size */
+     }
+     .coming-soon-logo {
+         max-width: 300px; /* Adjusted tablet logo size */
+     }
+     .coming-soon-lower-text {
+         font-size: 2.2rem; /* Adjusted tablet lower text size */
+         /* Keep left alignment on tablets */
      }
 }
 
 @media (max-width: 767.98px) {
     .coming-soon-upper {
-        flex-direction: column; /* Stack text and logo vertically */
-        text-align: center; /* Center text when stacked */
-        gap: 30px; /* Adjust gap for stacked layout */
+        flex-direction: column; 
+        text-align: center; 
+        gap: 30px; 
         margin-bottom: 3rem;
     }
-    .coming-soon-text-block {
+     .coming-soon-text-block {
          flex-basis: auto; 
          order: 1; 
-         /* CHANGE: Ensure text block itself is centered */
-         text-align: center;
+         text-align: center; 
      }
      .coming-soon-logo-block {
-         flex-basis: auto; /* Reset flex basis */
-         order: 2; /* Optional: Put logo above text when stacked */
+         flex-basis: auto; 
+         order: 2; 
      }
      .coming-soon-text-block h2 {
-         font-size: 2.5rem; /* Adjust mobile heading size */
-         /*text-align: center; /* Center text when stacked */
+         font-size: 2.8rem; /* Adjusted mobile heading size */
+     }
+      .coming-soon-subheading{
+          font-size: 1.2rem; /* Adjusted mobile subheading size */
      }
      .coming-soon-logo {
-         max-width: 200px;
+         max-width: 250px; /* Adjusted mobile logo size */
      }
      .coming-soon-lower-text {
-        /* CHANGE: Center text on mobile and remove padding */
         text-align: center;
         padding-left: 0; 
-        font-size: 1.8rem;
+        font-size: 2rem; /* Adjusted mobile lower text size */
      }
 }
  @media (max-width: 575.98px) {
     .coming-soon-text-block h2 {
-         font-size: 2rem;
+         font-size: 2.2rem; /* Adjusted small mobile heading size */
+     }
+     .coming-soon-subheading{
+          font-size: 1.1rem;
+     }
+      .coming-soon-logo {
+         max-width: 200px;
      }
      .coming-soon-lower-text {
-        font-size: 1.6rem;
+        font-size: 1.8rem; /* Adjusted small mobile lower text size */
      }
  }
-
 /* --- Coming Soon Section --- */
 /*
 .coming-soon-section {
