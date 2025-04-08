@@ -239,8 +239,8 @@ ul {
     background-color: var(--bg-color); 
     padding: 8vh 0; 
     display: flex !important; 
-    align-items: center;
-    justify-content: center;
+    align-items: left;
+    justify-content: left;
     min-height: 80vh; 
 
 }
