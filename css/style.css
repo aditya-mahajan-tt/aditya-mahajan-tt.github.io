@@ -608,3 +608,32 @@ ul {
     .coming-soon-heading { font-size: 1.4rem; }
     .coming-soon-subtext { font-size: 1.6rem; }
 }
+
+
+/* --- TEMPORARY HIDE FOR MEETING --- */
+/* Hide all major sections */
+#header, 
+#hero, 
+#about, 
+#solutions, 
+#contact, 
+#footer {
+    display: none !important; /* Force hiding */
+}
+
+/* Ensure the Coming Soon section IS visible and takes space */
+#coming-soon {
+    display: block !important; /* Ensure it's displayed */
+    padding-top: 10vh;    /* Add some top padding */
+    padding-bottom: 10vh; /* Add some bottom padding */
+    min-height: 80vh;     /* Make it take up significant vertical space */
+    display: flex;        /* Use flex to help center content vertically */
+    align-items: center;
+    justify-content: center;
+}
+
+/* Ensure body allows scrolling if needed, but focus on the section */
+body {
+    overflow: auto !important; /* Allow scrolling if content overflows viewport */
+}
+/* --- END TEMPORARY HIDE --- */
