@@ -480,7 +480,7 @@ ul {
 
 /* Updated button text hint */
 .solution-item.is-expanded .expand-button::after { content: ' (Show Less)'; }
-.solution-item:not(.is-expanded) .expand-button::after { content: ' (Learn More)'; }
+.solution-item:not(.is-expanded) .expand-button::after { content: ''; }
 
 
 /* --- Contact Section --- */
