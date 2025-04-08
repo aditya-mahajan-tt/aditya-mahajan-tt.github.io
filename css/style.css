@@ -292,7 +292,7 @@ ul {
 
 .coming-soon-logo {
     /* --- INCREASED LOGO SIZE --- */
-    max-width: 650px; /* Larger logo */
+    max-width: 900px; /* Larger logo */
     height: auto;
 }
 
@@ -315,7 +315,7 @@ ul {
           font-size: 1.5rem;
      }
      .coming-soon-logo {
-         max-width: 500px; 
+         max-width: 800px; 
      }
      .coming-soon-lower-text {
          font-size: 2.6rem; 
@@ -331,7 +331,7 @@ ul {
           font-size: 1.4rem; /* Adjusted tablet subheading size */
      }
      .coming-soon-logo {
-         max-width: 380px; /* Adjusted tablet logo size */
+         max-width: 480px; /* Adjusted tablet logo size */
      }
      .coming-soon-lower-text {
          font-size: 2.2rem; /* Adjusted tablet lower text size */
@@ -362,7 +362,7 @@ ul {
           font-size: 1.2rem; /* Adjusted mobile subheading size */
      }
      .coming-soon-logo {
-         max-width: 280px; /* Adjusted mobile logo size */
+         max-width: 380px; /* Adjusted mobile logo size */
      }
      .coming-soon-lower-text {
         text-align: center;
@@ -378,7 +378,7 @@ ul {
           font-size: 1.1rem;
      }
       .coming-soon-logo {
-         max-width: 240px;
+         max-width: 340px;
      }
      .coming-soon-lower-text {
         font-size: 1.8rem; /* Adjusted small mobile lower text size */
