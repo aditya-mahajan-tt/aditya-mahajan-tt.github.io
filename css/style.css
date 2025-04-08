@@ -236,14 +236,12 @@ ul {
 }
 /* --- Coming Soon Section V2 --- */
 .coming-soon-section {
-    background-color: var(--bg-color); /* Changed to white for cleaner look */
-    /* border-bottom: 1px solid var(--border-color); Remove border if desired */
-    padding: 8vh 0; /* Adjust padding */
-    /* Ensure it's visible when other sections are hidden */
-    display: flex !important; /* Keep flex if using temp hide */
+    background-color: var(--bg-color); 
+    padding: 8vh 0; 
+    display: flex !important; 
     align-items: center;
     justify-content: center;
-    min-height: 80vh; /* Keep min height if using temp hide */
+    min-height: 80vh; 
 
 }
 
@@ -253,31 +251,35 @@ ul {
 
 .coming-soon-upper {
     display: flex; 
-    justify-content: space-between; /* Keep space between */
+    justify-content: space-between; 
     align-items: center; 
-    gap: 50px; /* Increase gap slightly */
+    gap: 50px; 
     margin-bottom: 4rem; 
 }
 
 .coming-soon-text-block {
-    flex-basis: 55%; /* Adjust basis slightly if needed */
-    text-align: left; /* Align text left for readability */
+    flex-basis: 55%;
+    /* CHANGE: Ensure text alignment is explicitly left */
+    text-align: left; 
 }
 
 .coming-soon-text-block h2 {
     /* --- INCREASED FONT SIZE --- */
-    font-size: 3.8rem;  /* Larger heading */
+    font-size: 3.8rem;  
     font-weight: 600;
-    line-height: 1.25; /* Adjust line height */
+    line-height: 1.25; 
     color: var(--primary-text);
-    margin-bottom: 1rem; /* Add space below heading */
+    margin-bottom: 1rem; 
+    /* Should inherit text-align: left from parent */
 }
 
 .coming-soon-subheading {
     font-size: 1.3rem;
-    font-weight: 400;
-    color: var(--secondary-text); /* Use secondary text color */
-    margin: 0; /* Reset margin */
+    /* CHANGE: Increased font weight for more thickness */
+    font-weight: 500; /* Was 400 */
+    color: var(--secondary-text); 
+    margin: 0; 
+     /* Should inherit text-align: left from parent */
 }
 
 .coming-soon-logo-block {
@@ -289,15 +291,18 @@ ul {
 
 .coming-soon-logo {
     /* --- INCREASED LOGO SIZE --- */
-    max-width: 350px; /* Larger logo */
+    max-width: 450px; /* Larger logo */
     height: auto;
 }
 
 .coming-soon-lower-text {
-    text-align: center;
-    font-size: 2.2rem; /* Smaller "Coming Soon!" */
-    font-weight: 500; /* Less bold */
-    color: var(--primary-text); /* Change color to primary text */
+    /* CHANGE: Align text to the left */
+    text-align: left; /* Was center */
+    /* CHANGE: Add slight padding to the left */
+    padding-left: 1.5rem; /* Adjust value (e.g., 1rem, 2rem) as needed */
+    font-size: 2.2rem; 
+    font-weight: 500; 
+    color: var(--primary-text); 
     margin: 0; 
 }
 
@@ -310,7 +315,7 @@ ul {
           font-size: 1.2rem;
      }
      .coming-soon-logo {
-         max-width: 240px; /* Adjust tablet logo size */
+         max-width: 280px; /* Adjust tablet logo size */
      }
      .coming-soon-lower-text {
          font-size: 2rem; /* Adjust tablet lower text size */
@@ -325,8 +330,10 @@ ul {
         margin-bottom: 3rem;
     }
     .coming-soon-text-block {
-         flex-basis: auto; /* Reset flex basis */
-         order: 1; /* Optional: Put text below logo when stacked */
+         flex-basis: auto; 
+         order: 1; 
+         /* CHANGE: Ensure text block itself is centered */
+         text-align: center;
      }
      .coming-soon-logo-block {
          flex-basis: auto; /* Reset flex basis */
@@ -334,12 +341,15 @@ ul {
      }
      .coming-soon-text-block h2 {
          font-size: 2.5rem; /* Adjust mobile heading size */
-         text-align: center; /* Center text when stacked */
+         /*text-align: center; /* Center text when stacked */
      }
      .coming-soon-logo {
          max-width: 200px;
      }
      .coming-soon-lower-text {
+        /* CHANGE: Center text on mobile and remove padding */
+        text-align: center;
+        padding-left: 0; 
         font-size: 1.8rem;
      }
 }
