@@ -679,8 +679,20 @@ ul {
     justify-content: center;
 }
 
+
+
+
 /* Ensure body allows scrolling if needed, but focus on the section */
 body {
     overflow: auto !important; /* Allow scrolling if content overflows viewport */
 }
 /* --- END TEMPORARY HIDE --- */
+
+
+
+/* --- Center Text on Mobile Devices --- */
+@media screen and (max-width: 767px) {
+  h1, h2, h3, p {
+    text-align: center;
+  }
+}
